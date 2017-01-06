@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+{include file='public/header'/}
+<br />
+<br />
+首页
+<br />
+{if condition="$userInfo.uid gt 0"}<a href="{:url('WechatAdmin/index')}">后台</a>{else/}<a href="{:url('Index/login')}">后台</a>{/if}
+
+    {if condition="$userInfo.uid gt 0"}{$userInfo.uname}{/if}{if condition="$userInfo.uid gt 0"}<input type="button" class="out" value="退出" />{else/}<a href="{:url('Index/login')}">登录</a>{/if}
+
+{include file='public/footer'/}
+</body>
+</html>

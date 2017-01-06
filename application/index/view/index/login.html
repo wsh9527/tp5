@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+
+</head>
+{load file="/static/js/jquery-1.10.2.min.js"/}
+{load file="/static/css/style.css"/}
+
+<body>
+<h1>Login</h1>
+<div class="login-form">
+    <div class="close"> </div>
+    <div class="head-info">
+        <label class="lbl-1"> </label>
+        <label class="lbl-2"> </label>
+        <label class="lbl-3"> </label>
+    </div>
+    <div class="clear"> </div>
+    <div class="avtar">
+        <img src="/static/images/avtar.png" />
+    </div>
+    <form method="post" action="{:url('Index/login')}">
+        <input type="text" class="text" value="Username" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
+        <div class="key">
+            <input type="password" value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+        </div>
+        <div class="signin">
+            <input type="submit" value="Login" >
+        </div>
+    </form>
+</div>
+<div class="copy-rights">
+    <p>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+</div>
+
+<script>
+    $(document).ready(function(c) {
+        $('.close').on('click', function(c){
+            $('.login-form').fadeOut('slow', function(c){
+                $('.login-form').remove();
+            });
+        });
+    });
+</script>
+{include file='public/footer'/}
+</body>
+</html>

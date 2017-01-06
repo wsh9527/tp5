@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="page-loading-overlay">
+    <div class="loader-2"></div>
+</div>
+
+{load file="/static/assets/js/bootstrap.min.js"/}
+{load file="/static/assets/js/TweenMax.min.js"/}
+{load file="/static/assets/js/resizeable.js"/}
+{load file="/static/assets/js/joinable.js"/}
+{load file="/static/assets/js/xenon-api.js"/}
+{load file="/static/assets/js/xenon-toggles.js"/}
+{load file="/static/assets/js/xenon-widgets.js"/}
+{load file="/static/assets/js/devexpress-web-14.1/js/globalize.min.js"/}
+{load file="/static/assets/js/devexpress-web-14.1/js/dx.chartjs.js"/}
+{load file="/static/assets/js/toastr/toastr.min.js"/}
+{load file="/static/assets/js/xenon-custom.js"/}
+<script>
+    $('.out').click(function(){
+        $.ajax({
+            url:"{:url('Index/lout')}",
+            type:'get',
+            dataType:'json',
+            success:function(data){
+                $('.head').html("<a href='{:url('Index/login')}'>登录</a>");
+                alert(data.msg)
+
+            },
+            error:function(data){
+
+            }
+        })
+    })
+</script>
+</body>
+
+
+
+</html>

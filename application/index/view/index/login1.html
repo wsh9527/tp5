@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+
+</head>
+{load file="/static/js/jquery-1.10.2.min.js"/}
+{load file="/static/js/supersized.3.2.7.min.js"/}
+{load file="/static/js/supersized-init.js"/}
+{load file="/static/css/reset.css"/}
+{load file="/static/css/supersized.css"/}
+{load file="/static/css/style.css"/}
+{include file='public/header'/}
+<body>
+<div class="page-container">
+    <h1>Login</h1>
+    <form action="{:url('Index/login')}" method="post">
+        <input type="text" name="username" class="username" placeholder="Username">
+        <input type="password" name="password" class="password" placeholder="Password">
+        <button type="submit">Sign me in</button>
+        <div class="error"><span>+</span></div>
+    </form>
+    <div class="connect">
+        <p>Or connect with:</p>
+        <p>
+            <a class="facebook" href=""></a>
+            <a class="twitter" href=""></a>
+        </p>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('.page-container form').submit(function(){
+            var username = $(this).find('.username').val();
+            var password = $(this).find('.password').val();
+            if(username == '') {
+                $(this).find('.error').fadeOut('fast', function(){
+                    $(this).css('top', '27px');
+                });
+                $(this).find('.error').fadeIn('fast', function(){
+                    $(this).parent().find('.username').focus();
+                });
+                return false;
+            }
+            if(password == '') {
+                $(this).find('.error').fadeOut('fast', function(){
+                    $(this).css('top', '96px');
+                });
+                $(this).find('.error').fadeIn('fast', function(){
+                    $(this).parent().find('.password').focus();
+                });
+                return false;
+            }
+        });
+        $('.page-container form .username, .page-container form .password').keyup(function(){
+            $(this).parent().find('.error').fadeOut('fast');
+        });
+
+    });
+
+</script>
+{include file='public/footer'/}
+</body>
+</html>
