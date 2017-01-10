@@ -63,6 +63,10 @@ class WechatAdmin extends Controller
         return $this->view->fetch();
     }
     function uploadFile(){
-        echo 3;exit;
+        $file = request()->file('file');
+        //$info = $file->move($dir);
+        //$data['attrurl'] = str_replace('\\', '/', $info->getPathname());　　//GetPathName返回文件路径(盘符+路径+文件名)
+        file_put_contents('file.logggggggggggggggg',var_export($file,true),FILE_APPEND);
+        dump($file);exit;
     }
 }
