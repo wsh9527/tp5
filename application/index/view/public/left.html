@@ -42,13 +42,14 @@
         <ul id="main-menu" class="main-menu">
             <!-- add class "multiple-expanded" to allow multiple submenus to open -->
             <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
-            <li>
+
+            <li {if condition="$Request.action eq 'wxaccess'"}class='active opened'{/if}>
                 <a href="wxaccess.html">
                     <i class="linecons-cog"></i>
                     <span class="title">功能</span>
                 </a>
                 <ul>
-                    <li>
+                    <li {if condition="$Request.action eq 'wxaccess'"}class='active'{/if}>
                         <a href="wxaccess.html">
                             <span class="title">接入</span>
                         </a>
