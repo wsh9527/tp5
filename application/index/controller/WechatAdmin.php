@@ -13,7 +13,6 @@ class WechatAdmin extends Controller
 {
     function _initialize()
     {
-        $this->view = new View();
         $this->request = Request::instance();
         $userInfo = $this->request->session();
         isset($userInfo['uid'])?$userInfo['uid']:$userInfo['uid']=0;
@@ -48,7 +47,7 @@ class WechatAdmin extends Controller
             'userInfo' => $userInfo
         );
         $this->assign($res);
-        return $this->view->fetch('wxaccess');
+        return $this->view->fetch();
     }
 
 }

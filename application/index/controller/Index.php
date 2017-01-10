@@ -12,8 +12,10 @@ class Index extends Controller
 {
     function _initialize()
     {
-        $this->view = new View();
         $this->request = Request::instance();
+    }
+    function test(){
+        echo '接口返回';exit;
     }
     function index()
     {

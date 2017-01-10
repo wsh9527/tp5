@@ -21,7 +21,78 @@
     <!--left-->
 
     <!--content-->
-    {include file='public/Content'}
+    <div class="main-content">
+
+        <!-- User Info, Notifications and Menu Bar -->
+        {include file="public/nav"}
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">EU Greenhouse Gas Emissions</h3>
+                <div class="panel-options">
+                    <a href="#" data-toggle="panel">
+                        <span class="collapse-icon">&ndash;</span>
+                        <span class="expand-icon">+</span>
+                    </a>
+                    <a href="#" data-toggle="remove">
+                        &times;
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-sm-6">
+
+
+                        <div id="italy" style="height: 380px;"></div>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <strong class="text-primary h3">Examining Country &ndash; Italy</strong>
+                        <br />
+                        <br />
+                        <p>Proper resources reduce carbon emissions resolve crisis situation, advocate, innovation.</p>
+
+                        <div class="vspacer v3"></div>
+
+                        <div class="label label-secondary">FQ 2014</div>
+
+                        <ul class="list-unstyled list-margin">
+                            <li>Carbon Emission: <strong>3.18</strong> Tonnes CO2</li>
+                            <li>Reduction from previous year: <strong>20.7%</strong> g/km</li>
+                            <li>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar progress-bar-info" style="width: 42.5%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                        <div class="label label-secondary">LQ 2013</div>
+
+                        <ul class="list-unstyled list-margin">
+                            <li>Carbon Emission: <strong>6.42</strong> Tonnes CO2</li>
+                            <li>Reduction from previous year: <strong>15.9%</strong> g/km</li>
+                            <li>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar progress-bar-warning" style="width: 65.4%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        {include file="public/admin_foot"}
+    </div>
     <!--content-->
 
     <!-- start: Chat Section -->
