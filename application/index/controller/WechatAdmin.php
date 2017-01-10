@@ -44,10 +44,25 @@ class WechatAdmin extends Controller
         isset($userInfo['uid'])?$userInfo['uid']:$userInfo['uid']=0;
         $userInfo['uid']?$userInfo['uid']:'0';
         $res = array(
-            'userInfo' => $userInfo
+            'userInfo' => $userInfo,
+            'status' => 1
         );
         $this->assign($res);
         return $this->view->fetch();
     }
-
+    //editForms
+    function editForms(){
+        $userInfo = $this->request->session();
+        isset($userInfo['uid'])?$userInfo['uid']:$userInfo['uid']=0;
+        $userInfo['uid']?$userInfo['uid']:'0';
+        $res = array(
+            'userInfo' => $userInfo,
+            'status' => 1
+        );
+        $this->assign($res);
+        return $this->view->fetch();
+    }
+    function uploadFile(){
+        echo 3;exit;
+    }
 }
