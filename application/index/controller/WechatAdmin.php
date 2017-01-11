@@ -6,7 +6,6 @@ use app\index\model\Wechat;
 use think\Controller;
 use think\Request;
 use think\Db;
-use think\view;
 
 
 class WechatAdmin extends Controller
@@ -64,10 +63,31 @@ class WechatAdmin extends Controller
         return $this->view->fetch();
     }
     function uploadFile(){
-        $file = request()->file('file');
-        //$info = $file->move($dir);
-        //$data['attrurl'] = str_replace('\\', '/', $info->getPathname());　　//GetPathName返回文件路径(盘符+路径+文件名)
-        //file_put_contents('file.logggggggggggggggg',var_export($file,true),FILE_APPEND);
-        dump($file);exit;
+        // 获取表单上传文件 例如上传了001.jpg
+        $file = request()->file('upload');
+
+        $turepath = $file->getRealPath();
+        $md5path=md5_file($turepath);
+        $shalpath=sha1_file($turepath);
+        $map["md5"]=$md5path;
+        $map["sha1"]=$shalpath;
+        //判断文件类型
+        if(!count($file)){
+            echo '图片不能为空!';
+        }
+        $type=$file->checkImg();
+        if(!$type){
+            echo '图片类型不正确!';
+        }
+        // 移动到框架应用根目录/public/uploads/ 目录下
+        $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+        $ss = $info->getFileInfo();
+        var_dump($info);exit;
+        if($info){
+
+        }else{
+            // 上传失败获取错误信息
+            echo '上传失败';
+        }
     }
 }
