@@ -27,7 +27,8 @@ class WechatAdmin extends Controller
         isset($userInfo['uid'])?$userInfo['uid']:$userInfo['uid']=0;
         $userInfo['uid']?$userInfo['uid']:'0';
         $res = array(
-            'userInfo' => $userInfo
+            'userInfo' => $userInfo,
+            'status' => 0
         );
         $this->assign($res);
         return $this->view->fetch();
