@@ -98,4 +98,8 @@ dump($ceshi);exit;
             echo '上传失败';
         }
     }
+    function uploadFiles(){
+        $getfile = request()->file();
+        dump($getfile);exit;
+    }
 }
